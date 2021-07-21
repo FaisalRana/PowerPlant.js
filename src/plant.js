@@ -1,3 +1,8 @@
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css';
+
+
 // This function stores our state.
 
 const storeState = () => {
@@ -24,11 +29,11 @@ const changeState = (prop) => {
 
 // We create four functions using our function factory. We could easily create many more.
 
-const feed = changeState("soil")(1);
+// const feed = changeState("soil")(1);
 const blueFood = changeState("soil")(5);
 
-const hydrate = changeState("water")(1);
-const superWater = changeState("water")(5);
+// const hydrate = changeState("water")(1);
+// const superWater = changeState("water")(5);
 
 $(document).ready(function() {
 
