@@ -1,7 +1,7 @@
 {
-  "name": "current-exchange-using-an-api",
+  "name": "powerplant",
   "version": "1.0.0",
-  "description": "It will convert USD to other currencies",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=development",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/saoud/Project-6-Exchange-Rate-APIt"
+    "url": "git+https://github.com/saoud/PowerPlant"
   },
   "keywords": [],
   "author": "Saoud Rana",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/saoud/Project-6-Exchange-Rate-API/issues"
+    "url": "https://github.com/saoud/PowerPlant/issues"
   },
-  "homepage": "https://github.com/saoud/Project-6-Exchange-Rate-APIreadme",
+  "homepage": "https://github.com/saoud/PowerPlantreadme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-transform-modules-commonjs": "^7.6.0",
