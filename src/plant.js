@@ -27,6 +27,15 @@ const changeState = (prop) => {
   }
 }
 
+const changePlant = (prop) => {
+  return (value) => {
+    return (plant) => ({
+      ...plant,
+      [prop] : value
+    })
+  }
+}
+
 // We create four functions using our function factory. We could easily create many more.
 
 const feed = changeState("soil")(1);
@@ -34,8 +43,8 @@ const blueFood = changeState("soil")(5);
 const hydrate = changeState("water")(1);
 const superWater = changeState("water")(5);
 
-// const newPlant = storeState();
-// console.log(newPlant);
+const newPlant = changePlant("name")("roses");
+console.log(Object.values(newPlant));
 
 $(document).ready(function() {
   // const currentState = stateControl();
