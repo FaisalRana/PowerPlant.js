@@ -1,26 +1,38 @@
 <html>
-  <head>
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    <script type="text/javascript" src="plant.js"></script>
-    <title>Grow Your Plant</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="grow-buttons">
-        <button class="btn-success" id="feed">Add plant food</button>
-        <button class="btn-success" id="blue-food">Add blue food</button>
-        <button class="btn-success" id="hydrate">Add Water</button>
-        <button class="btn-success" id="super-hydrate">Add Super Water</button>
-        <!-- <button class="btn-success" id="show-state">Current Stats</button> -->
-      </div>
-      <h3><div id="plant-names">0</div></h3>
-      <h1>Your Plant's Values</h1>
-      <h3><div id="soil-value">0</div></h3>
-      <h1>Your Water's Values</h1>
-      <h3><div id="water-value">0</div></h3>
-    </div>
-  </body>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="plant.js"></script>
+  <title>Grow Your Plant</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grow-buttons">
+      <button class="btn-success" id="health">Add plant food</button>
+      <button class="btn-success" id="blueFood">Add blue food</button>
+      <button class="btn-success" id="hydrate">Add Water</button>
+      <button class="btn-success" id="superWater">Add Super Water</button>
+      <!-- <button class="btn-success" id="show-state">Current Stats</button> -->
+    </div>    
+    <h3>
+      <h1>Your Plant's Health Values</h1>
+      <div id="health2">0</div>
+    </h3>
+    <h3>
+      <h1>Your Plant's BlueFood Values</h1>
+      <div id="blueFood2">0</div>
+    </h3>
+    <h3>
+      <h1>Your Plant's Hydrate Values</h1>
+      <div id="hydrate2">0</div>
+    </h3>
+    <!-- <h3>
+      <h1>Your Plant's SuperWater Values</h1>
+      <div id="superWater2">0</div>
+    </h3> -->
+  </div>
+</body>
+
 </html>
