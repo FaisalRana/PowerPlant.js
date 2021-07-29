@@ -1,14 +1,19 @@
 .container {
   padding: 20px;
   margin: 20px;
-  border: solid purple;
+  border: solid green;
 }
 
 body {
-  background-color: lightgray;;
+  background-color: black;;
   color: yellow;
 }
 
 .hiddenOutput {
   display:none;
 }
+
+input {
+  width: 100%;
+}  
+

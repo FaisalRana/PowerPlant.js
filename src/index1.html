@@ -27,6 +27,20 @@ const changeState = (prop) => { //changeState("feed")(1)(currentState)    //fucn
   };
 };
 
+//obj = {feed:0, blueFood:0, hydrate:0, superWater:0 }
+//const feed = changeState("feed")(1); //PO: at this point this to an object - access to last statement that takes object as an arg - not executing last statement
+
+// const changePlant = (prop) => { 
+//   return (value) => {
+//     return (plant) => ({
+//       ...plant,
+//       [prop] : value
+//     })
+//   }
+// }
+
+// We create four functions using our function factory. We could easily create many more.
+
 const firstHealthFunction = changeState("health");
 const firstAgilityFunction = changeState("agility");
 const firstIntelligenceFunction = changeState("intelligence");
@@ -41,26 +55,39 @@ const firstStealthFunction = changeState("stealth");
 const charachters = { "mage": { health: 2, intelligence: 5, agility: 3 }, "paladin": { health: 5, intelligence: 3, agility: 2 }, "warrior": { health: 5, intelligence: 1, agility: 4 }, "thief": { health: 1, intelligence: 5, agility: 4 } };
 
 $(document).ready(function () {
-
+  // const currentState = stateControl();
+  // $('#plant-names').text(`Name: ${currentState.plant}`);
+  // This function has side effects because we are using jQuery. Manipulating the DOM will always be a side effect. Note that we only use one of our functions to alter soil. You can easily add more.
   setPoints();
   $('#MyButton').click(function () {
     pointTracker();
   });
-
+  // setPoints();
+  // $('#CreatePlayer2').click(function () {
+  //   pointTracker();
+  // });
 
   $('#attribute-form').submit(function (event) {
+
     const charachterInput = $('#characters').val();
 
     stateControl(() => charachters[charachterInput]);
 
     const name = $('#name-input').val();
+    console.log(typeof (name));
     const healthInput = parseInt($('#health-input').val());
     const agilityInput = parseInt($('#agility-input').val());
     const intelligenceInput = parseInt($('#intelligence-input').val());
     const strengthInput = parseInt($('#strength-input').val());
     const stealthInput = parseInt($('#stealth-input').val());
 
-    const newStateArray = [firstHealthFunction(healthInput), firstAgilityFunction(agilityInput), firstIntelligenceFunction(intelligenceInput), firstStealthFunction(stealthInput), firstStrengthFunction(strengthInput)];
+    const secondHealthFunction = firstHealthFunction(healthInput);
+    const secondAgilityFunction = firstAgilityFunction(agilityInput);
+    const secondIntelligenceFunction = firstIntelligenceFunction(intelligenceInput);
+    const secondStrengthFunction = firstStrengthFunction(strengthInput);
+    const secondStealthFunction = firstStealthFunction(stealthInput);
+
+    const newStateArray = [secondHealthFunction, secondAgilityFunction, secondIntelligenceFunction, secondStrengthFunction, secondStealthFunction];
 
     const newState = newStateArray.reduce(function (acc, fn) {
       console.log(acc);
@@ -68,24 +95,24 @@ $(document).ready(function () {
     }, {})
 
     const character1 = { ...newState };
-    const player1 = createSimpleObject(name, character1);
-    console.log(player1);
+  //   console.log(createSimpleObject(name, character1))
 
-    $('#test-value').text(player1[name].health);
+  //   function createSimpleObject(name, value){
+  //     var obj = {};
+  //     obj[name] = value;
+  //     return obj;
+  // }
 
-    function createSimpleObject(name, value) {
-      var obj = {};
-      obj[name] = value;
-      return obj;
-    }
+
+    //  const charachter = {}
+    //  charachter[name] = {...newState};
 
     $('#name-value').text(`Character Name: ${name}`);
-    $('#health-value').text(`Health: ${player1[name].health}`);
-    $('#agility-value').text(`Agility: ${player1[name].agility}`);
-    $('#intelligence-value').text(`Intelligence: ${player1[name].intelligence}`);
-    $('#strength-value').text(`Strength: ${player1[name].strength}`);
-    $('#stealth-value').text(`Stealth: ${player1[name].stealth}`);
-    $(`.hiddenOutput`).show();
+    $('#health-value').text(`Health: ${character1.health}`);
+    $('#agility-value').text(`Agility: ${character1.agility}`);
+    $('#intelligence-value').text(`Intelligence: ${character1.intelligence}`);
+    $('#strength-value').text(`Strength: ${character1.strength}`);
+    $('#stealth-value').text(`Stealth: ${character1.stealth}`);
     event.preventDefault();
   });
 

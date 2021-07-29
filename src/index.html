@@ -9,6 +9,15 @@
 <body>
   <div class="container">
     <form id="attribute-form">
+      <label for="character">Choose a charachter type:</label>
+
+      <select name="characters" id="characters">
+        <option value="mage">mage</option>
+        <option value="paladin">paladin</option>
+        <option value="warrior">warrior</option>
+        <option value="thief">thief</option>
+      </select>
+
       <label for="name-input">Enter Name:</label>
       <input type="text" id="name-input">
       <label for="name-input">Assign health:</label>
@@ -21,8 +30,11 @@
       <input type="number" id="strength-input">
       <label for="name-input">Assign stealth:</label>
       <input type="number" id="stealth-input">
-      <button type="submit">Create</button>  
-  </form>
+      <p>Point Count: </p><p id="pointCount">0</p>
+      <button type="submit" form="attribute-form" value="Submit">Submit</button>
+    </form>
+
+    <input type="button" value="Deduct Points" id="MyButton" >
 
   <div class="hiddenOutput">
     <h1>Your Created Character:</h1>
@@ -32,6 +44,7 @@
     <h3><div id="intelligence-value"></div></h3>
     <h3><div id="strength-value"></div></h3>
     <h3><div id="stealth-value"></div></h3>
+    <h3><div id="test-value"></div></h3>
     <ul id="response"></ul>
   </div>
 </div>
