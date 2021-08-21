@@ -1,7 +1,7 @@
 # Title
 #### 
 #### Project initiated: 
-#### By Saoud Rana
+#### By Faisal Rana
 ## Project Description
 
 
@@ -35,7 +35,6 @@ Expect:
 ## Notes
 
 ## License
-* [MIT](https://github.com/saoud/html-template/blob/main/LICENSE)
-* Copyright 2021 Saoud Rana
+* Copyright 2021 Faisal Rana
 ## Contact
-Saoud Rana githubissues@saoud.dev
+Faisal Rana inquisitive@gmail
